@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+class Node
+{
+    int data;
+    Node link;
+
+    Node(int num)
+    {
+        data = num;
+        link = null;
+    }
+}
+
+class Stack
+{
+    Node top = null;
+
+    boolean isEmpty()
+    {
+        return top == null;
+    }
+
+    void push(int c)
+    {
+        Node temp = new Node(c);
+        temp.link = top;
+        top = temp;
+    }
+
+    int pop()
+    {
+        int p = top.data;
+        top = top.link;
+        return p;
+    }
+}
+
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner scan = new Scanner(System.in);
+
+        int i,j,s,first,second,res,n = scan.nextInt();
+        String[] arr = new String[n];
+        for(i=0;i<n;i++)
+        arr[i] = scan.nextLine();
+
+        Stack MyStack = new Stack();
+
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<arr[i].length();j++)
+            {
+                if((arr[i][j]>="0")&&(arr[i][j]<="9"))
+                {
+                    s = arr[i][j];
+                    s-=48;
+                    MyStack.push(s);
+                }
+                else
+                {
+                    first = MyStack.pop();
+                    second = MyStack.pop();
+
+                    if(arr[i][j]=='+')
+                    MyStack.push(first+second);
+                    else if(arr[i][j]=='-')
+                    MyStack.push(first-second);
+                    else if(arr[i][j]=='*')
+                    MyStack.push(first*second);
+                    else if(arr[i][j]=='/')
+                    MyStack.push(first/second);
+
+                }
+            }
+            System.out.println(MyStack.pop());
+        }
+
+    }
+}
