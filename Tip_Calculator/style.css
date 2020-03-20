@@ -1,0 +1,35 @@
+.heading
+{
+    font-size: xxx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: rebeccapurple;
+    font-style: inherit;
+}
+
+.promo
+{
+    padding-left: 60%;
+    font-size: larger;
+    color: darkblue
+}
+
+.paragraph
+{
+    text-align: center;
+    padding-top: 12%;
+    color: darkslateblue;
+    font-size: x-large;
+}
+
+.button
+{
+    padding-left: 47%;
+}
+
+.output
+{
+    padding-top: 5%;
+    padding-left: 42%;
+}
+
