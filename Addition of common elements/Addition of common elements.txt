@@ -1,0 +1,21 @@
+public static long commonSum(int arr1[], int arr2[])
+{
+       long sum = 0;
+              int i;
+               HashSet<Integer> set1=new HashSet<Integer>();
+              HashSet<Integer> set2=new HashSet<Integer>();
+
+              for(i=0;i<arr1.length;i++)
+                     set1.add(arr1[i]);
+              for(i=0;i<arr2.length;i++)
+                     set2.add(arr2[i]);
+
+              set1.retainAll(set2);
+              //long sum=0;
+              for(Integer j:set1)
+              {
+                     sum+=j;
+              }
+              //return sum;
+       return sum;
+}
